@@ -5,7 +5,7 @@
         <JobDescription :job="job" />
         <div class="d-flex gap-2 mt-4">
           <ApplyButton />
-          <router-link to="/jobs" class="btn btn-outline-secondary"
+          <router-link to="/" class="btn btn-outline-secondary"
             >Back to Jobs</router-link
           >
         </div>
@@ -15,7 +15,7 @@
 
   <div v-else class="container mt-4">
     <div class="alert alert-danger">Job not found</div>
-    <router-link to="/jobs" class="btn btn-outline-secondary"
+    <router-link to="/" class="btn btn-outline-secondary"
       >Back to Jobs</router-link
     >
   </div>

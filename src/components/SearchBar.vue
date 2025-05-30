@@ -1,5 +1,8 @@
 <template>
   <div class="input-group mb-4">
+    <button class="btn btn-outline-secondary" type="button">
+      <i class="bi bi-search"></i>
+    </button>
     <input
       type="text"
       class="form-control"
@@ -7,9 +10,6 @@
       v-model="searchTerm"
       @input="handleSearch"
     />
-    <button class="btn btn-outline-secondary" type="button">
-      <i class="bi bi-search"></i>
-    </button>
   </div>
 </template>
 

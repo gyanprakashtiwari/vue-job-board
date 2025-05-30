@@ -29,7 +29,7 @@ const handleSubmit = (formData) => {
   });
   showSuccess.value = true;
   setTimeout(() => {
-    router.push("/jobs");
+    router.push("/");
   }, 2000);
 };
 </script>
