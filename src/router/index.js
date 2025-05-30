@@ -4,8 +4,7 @@ import JobDetail from "../pages/JobDetail.vue";
 import PostJob from "../pages/PostJob.vue";
 
 const routes = [
-  { path: "/", redirect: "/jobs" },
-  { path: "/jobs", component: JobList },
+  { path: "/", component: JobList },
   { path: "/jobs/:id", component: JobDetail, props: true },
   { path: "/post-job", component: PostJob },
 ];
