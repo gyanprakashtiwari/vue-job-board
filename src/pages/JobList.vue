@@ -4,13 +4,13 @@
       <SearchBar @search="handleSearch" />
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3 col-12">
         <div class="mb-3">
           <h5 class="fw-semibold">Filters</h5>
         </div>
         <JobFilterSidebar @update-filters="handleFilterChange" />
       </div>
-      <div class="col-md-9 border-start ps-4">
+      <div class="col-md-9 col-12 job-content">
         <div class="mb-3">
           <h5 class="fw-semibold">Jobss</h5>
         </div>
@@ -92,4 +92,17 @@ const changePage = (page) => {
 
 <style scoped>
 /* Optional: Add custom styling if needed */
+.job-content {
+  /* No border or padding on mobile by default */
+  border-left: none;
+  /* padding-left: 0; */
+}
+
+/* For screen width 768px and above (md+) */
+@media (min-width: 768px) {
+  .job-content {
+    border-left: 1px solid #dee2e6; /* Matches Bootstrap's border color */
+    padding-left: 1.5rem; /* Equivalent to Bootstrap's ps-4 */
+  }
+}
 </style>
