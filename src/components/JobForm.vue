@@ -24,7 +24,10 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-3">Post Job</button>
+    <!-- Align button to the right -->
+    <div class="text-end mt-3">
+      <button type="submit" class="btn btn-primary">Post Job</button>
+    </div>
   </form>
 </template>
 
