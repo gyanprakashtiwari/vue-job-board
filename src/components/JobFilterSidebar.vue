@@ -1,7 +1,6 @@
 <template>
-  <div class="card mb-4">
+  <div class="card mb-4 border-0">
     <div class="card-body">
-      <h5 class="card-title">Filters</h5>
       <div class="mb-3">
         <h6>Location</h6>
         <div class="form-check" v-for="location in locations" :key="location">
