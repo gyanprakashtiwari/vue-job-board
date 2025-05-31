@@ -4,7 +4,7 @@
 
     <div class="row">
       <div class="col-md-3">
-        <JobFilterSidebar />
+        <JobFilterSidebar @update-filters="handleFilterChange" />
       </div>
       <div class="col-md-9">
         <SearchBar @search="handleSearch" />
@@ -38,13 +38,34 @@ const jobsStore = useJobsStore();
 const searchTerm = ref("");
 const currentPage = ref(1);
 const jobsPerPage = 5;
+const selectedTypes = ref([]);
+const selectedLocations = ref([]);
+
+const handleFilterChange = (filters) => {
+  selectedTypes.value = filters.types;
+  selectedLocations.value = filters.locations;
+  currentPage.value = 1; // Reset to first page when filters change
+};
 
 const filteredJobs = computed(() => {
-  return jobsStore.jobs.filter(
-    (job) =>
+  return jobsStore.jobs.filter((job) => {
+    // Search term filter
+    const matchesSearch =
       job.title.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
-      job.company.toLowerCase().includes(searchTerm.value.toLowerCase())
-  );
+      job.company.toLowerCase().includes(searchTerm.value.toLowerCase());
+
+    // Job type filter
+    const matchesJobType =
+      selectedTypes.value.length === 0 ||
+      selectedTypes.value.includes(job.type);
+
+    // Location filter
+    const matchesLocation =
+      selectedLocations.value.length === 0 ||
+      selectedLocations.value.includes(job.location);
+
+    return matchesSearch && matchesJobType && matchesLocation;
+  });
 });
 
 const totalPages = computed(() => {
