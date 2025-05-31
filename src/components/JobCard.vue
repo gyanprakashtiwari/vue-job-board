@@ -1,11 +1,9 @@
 <template>
   <div class="card mb-3 job-card" @click="navigateToJob">
     <div class="card-body">
-      <div class="d-flex justify-content-between align-items-start">
+      <div class="d-flex justify-content-between align-items-center">
         <h5 class="card-title">{{ job.title }}</h5>
-        <h6 class="card-subtitle text-muted" v-if="job.postDate">
-          {{ job.postDate }}
-        </h6>
+        <h6 class="card-subtitle text-muted">{{ job.postDate }}</h6>
       </div>
       <h6 class="card-subtitle mb-2 text-muted">
         {{ job.company }}
@@ -47,9 +45,5 @@ const navigateToJob = () => {
 .job-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card-title {
-  margin-bottom: 0.25rem;
 }
 </style>
