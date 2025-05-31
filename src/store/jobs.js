@@ -18,7 +18,7 @@ export const useJobsStore = defineStore("jobs", () => {
     },
     {
       id: 2,
-      title: "Frontend Developer 2",
+      title: "Software Developer",
       company: "Slam Tech Corp",
       location: "Bangalore",
       state: "KA",

@@ -8,16 +8,23 @@
       type="textarea"
       required
     />
-    <FormField
-      label="Job Type"
-      v-model="form.type"
-      type="select"
-      :options="jobTypes"
-      required
-    />
-    <FormField label="Location" v-model="form.location" required />
 
-    <button type="submit" class="btn btn-primary">Post Job</button>
+    <div class="row">
+      <div class="col-md-6">
+        <FormField
+          label="Job Type"
+          v-model="form.type"
+          type="select"
+          :options="jobTypes"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <FormField label="Location" v-model="form.location" required />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Post Job</button>
   </form>
 </template>
 
@@ -27,7 +34,7 @@ import FormField from "./FormField.vue";
 
 const emit = defineEmits(["submit"]);
 
-const jobTypes = ["Full-time", "Part-time", "Remote", "Contract"];
+const jobTypes = ["Full-time", "Part-time", "Remote"];
 const form = ref({
   company: "",
   title: "",
