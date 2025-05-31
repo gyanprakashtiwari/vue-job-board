@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-4" v-if="job">
+  <div class="mt-4" v-if="job">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <JobDescription :job="job" />
@@ -10,9 +10,9 @@
     </div>
   </div>
 
-  <div v-else class="container mt-4">
-    <div class="alert alert-danger">Job not found</div>
-    <router-link to="/" class="btn btn-outline-secondary"
+  <div v-else class="mt-4">
+    <div class="alert alert-danger border-0">Job not found</div>
+    <router-link to="/" class="btn btn-outline-secondary border-0"
       >Back to Jobs</router-link
     >
   </div>
