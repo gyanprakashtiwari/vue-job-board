@@ -1,35 +1,38 @@
 <template>
-  <div class="card mb-4">
-    <div class="card-body">
-      <h5 class="card-title">Filters</h5>
-      <div class="mb-3">
-        <h6>Location</h6>
-        <div class="form-check" v-for="location in locations" :key="location">
+  <div class="card mb-4 border-0">
+    <div class="card-body p-0">
+      <div class="mb-3 ms-0 ps-0">
+        <h6 class="ms-0 ps-0">Location</h6>
+        <div
+          class="form-check ms-0 ps-0"
+          v-for="location in locations"
+          :key="location"
+        >
           <input
-            class="form-check-input"
+            class="form-check-input ms-0 me-2"
             type="checkbox"
             :id="'loc-' + location"
             :value="location"
             v-model="selectedLocations"
             @change="emitFilters"
           />
-          <label class="form-check-label" :for="'loc-' + location">{{
+          <label class="form-check-label ms-0" :for="'loc-' + location">{{
             location
           }}</label>
         </div>
       </div>
-      <div class="mb-3">
-        <h6>Job Type</h6>
-        <div class="form-check" v-for="type in jobTypes" :key="type">
+      <div class="mb-3 ms-0 ps-0">
+        <h6 class="ms-0 ps-0">Job Type</h6>
+        <div class="form-check ms-0 ps-0" v-for="type in jobTypes" :key="type">
           <input
-            class="form-check-input"
+            class="form-check-input ms-0 me-2"
             type="checkbox"
             :id="'type-' + type"
             :value="type"
             v-model="selectedTypes"
             @change="emitFilters"
           />
-          <label class="form-check-label" :for="'type-' + type">{{
+          <label class="form-check-label ms-0" :for="'type-' + type">{{
             type
           }}</label>
         </div>

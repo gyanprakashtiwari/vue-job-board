@@ -5,21 +5,27 @@
     </div>
     <div class="row">
       <div class="col-md-3">
+        <div class="mb-3">
+          <h5 class="fw-semibold">Filters</h5>
+        </div>
         <JobFilterSidebar @update-filters="handleFilterChange" />
       </div>
-      <div class="col-md-9">
-        <div v-if="filteredJobs.length > 0">
-          <JobCard v-for="job in paginatedJobs" :key="job.id" :job="job" />
-          <Pagination
-            :current-page="currentPage"
-            :total-pages="totalPages"
-            @page-changed="changePage"
-          />
+      <div class="col-md-9 border-start ps-4">
+        <div class="mb-3">
+          <h5 class="fw-semibold">Jobss</h5>
         </div>
 
+        <div v-if="filteredJobs.length > 0">
+          <JobCard v-for="job in paginatedJobs" :key="job.id" :job="job" />
+        </div>
         <div v-else class="alert alert-info">
           No jobs found matching your criteria.
         </div>
+        <Pagination
+          :current-page="currentPage"
+          :total-pages="totalPages"
+          @page-changed="changePage"
+        />
       </div>
     </div>
   </div>
@@ -43,22 +49,19 @@ const selectedLocations = ref([]);
 const handleFilterChange = (filters) => {
   selectedTypes.value = filters.types;
   selectedLocations.value = filters.locations;
-  currentPage.value = 1; // Reset to first page when filters change
+  currentPage.value = 1;
 };
 
 const filteredJobs = computed(() => {
   return jobsStore.jobs.filter((job) => {
-    // Search term filter
     const matchesSearch =
       job.title.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
       job.company.toLowerCase().includes(searchTerm.value.toLowerCase());
 
-    // Job type filter
     const matchesJobType =
       selectedTypes.value.length === 0 ||
       selectedTypes.value.includes(job.type);
 
-    // Location filter
     const matchesLocation =
       selectedLocations.value.length === 0 ||
       selectedLocations.value.includes(job.location);
@@ -86,3 +89,7 @@ const changePage = (page) => {
   currentPage.value = page;
 };
 </script>
+
+<style scoped>
+/* Optional: Add custom styling if needed */
+</style>
