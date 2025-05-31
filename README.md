@@ -22,7 +22,7 @@ A Vue.js-based job listing platform with search, filtering, and job posting func
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/job-board.git
+   git clone https://github.com/gyanprakashtiwari/vue-job-board.git
    cd job-board
    ```
 
