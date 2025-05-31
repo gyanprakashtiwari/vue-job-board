@@ -7,14 +7,26 @@ export const useJobsStore = defineStore("jobs", () => {
       id: 1,
       title: "Frontend Developer",
       company: "Tech Corp",
-      location: "New York",
+      location: "Noida",
+      state: "UP",
+      type: "Part-time",
+      description:
+        "We are looking for a skilled frontend developer with Vue.js experience.",
+      fullDescription:
+        "Join our team to build amazing web applications using Vue 3, Vite, and modern JavaScript. You will work with a talented team of developers and designers to create beautiful, responsive user interfaces.",
+    },
+    {
+      id: 2,
+      title: "Frontend Developer 2",
+      company: "Slam Tech Corp",
+      location: "Bangalore",
+      state: "KA",
       type: "Full-time",
       description:
         "We are looking for a skilled frontend developer with Vue.js experience.",
       fullDescription:
         "Join our team to build amazing web applications using Vue 3, Vite, and modern JavaScript. You will work with a talented team of developers and designers to create beautiful, responsive user interfaces.",
     },
-    // Add more jobs here (at least 10)
   ]);
 
   const addJob = (newJob) => {
