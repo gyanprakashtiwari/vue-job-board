@@ -10,14 +10,7 @@
       <div class="col-md-9">
         <div v-if="filteredJobs.length > 0">
           <JobCard v-for="job in paginatedJobs" :key="job.id" :job="job" />
-          <!-- <Pagination
-            :current-page="currentPage"
-            :total-pages="totalPages"
-            @page-changed="changePage"
-          /> -->
         </div>
-        <!-- Centered pagination -->
-
         <div v-else class="alert alert-info">
           No jobs found matching your criteria.
         </div>
