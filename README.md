@@ -24,7 +24,7 @@ A Vue.js-based job listing platform with search, filtering, and job posting func
 
    ```bash
    git clone https://github.com/gyanprakashtiwari/vue-job-board.git
-   cd job-board
+   cd vue-job-board
    ```
 
 2. Install dependencies:
