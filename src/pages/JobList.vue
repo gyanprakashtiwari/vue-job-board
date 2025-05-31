@@ -1,6 +1,5 @@
 <template>
   <div class="container mt-4">
-    <h1 class="mb-4">Job Listings</h1>
 
     <div class="row">
       <div class="col-md-3">
