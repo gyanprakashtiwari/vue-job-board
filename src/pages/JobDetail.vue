@@ -3,11 +3,8 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <JobDescription :job="job" />
-        <div class="d-flex gap-2 mt-4">
+        <div class="d-flex justify-content-end mt-4">
           <ApplyButton />
-          <router-link to="/" class="btn btn-outline-secondary"
-            >Back to Jobs</router-link
-          >
         </div>
       </div>
     </div>
