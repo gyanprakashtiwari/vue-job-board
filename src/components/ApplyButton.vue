@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-success btn-lg" @click="handleApply">Apply Now</button>
+  <button class="btn btn-primary btn-lg" @click="handleApply">Apply Now</button>
 </template>
 
 <script setup>

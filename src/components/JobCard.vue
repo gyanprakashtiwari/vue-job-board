@@ -1,7 +1,10 @@
 <template>
   <div class="card mb-3 job-card" @click="navigateToJob">
     <div class="card-body">
-      <h5 class="card-title">{{ job.title }}</h5>
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="card-title">{{ job.title }}</h5>
+        <h6 class="card-subtitle text-muted">{{ job.postDate }}</h6>
+      </div>
       <h6 class="card-subtitle mb-2 text-muted">
         {{ job.company }}
       </h6>

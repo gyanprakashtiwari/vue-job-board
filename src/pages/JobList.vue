@@ -1,12 +1,13 @@
 <template>
   <div class="mt-4">
     <div class="row">
+      <SearchBar @search="handleSearch" />
+    </div>
+    <div class="row">
       <div class="col-md-3">
         <JobFilterSidebar @update-filters="handleFilterChange" />
       </div>
       <div class="col-md-9">
-        <SearchBar @search="handleSearch" />
-
         <div v-if="filteredJobs.length > 0">
           <JobCard v-for="job in paginatedJobs" :key="job.id" :job="job" />
           <Pagination
