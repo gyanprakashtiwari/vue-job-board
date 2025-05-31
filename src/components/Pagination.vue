@@ -1,28 +1,32 @@
 <template>
-  <nav aria-label="Page navigation" v-if="totalPages > 1">
-    <ul class="pagination">
-      <li class="page-item" :class="{ disabled: currentPage === 1 }">
-        <button class="page-link" @click="changePage(currentPage - 1)">
-          Previous
-        </button>
-      </li>
+  <div class="d-flex justify-content-center mt-4">
+    <nav aria-label="Page navigation" v-if="totalPages > 1">
+      <ul class="pagination">
+        <li class="page-item" v-if="currentPage !== 1">
+          <button class="page-link" @click="changePage(currentPage - 1)">
+            Previous
+          </button>
+        </li>
 
-      <li
-        class="page-item"
-        v-for="page in pages"
-        :key="page"
-        :class="{ active: page === currentPage }"
-      >
-        <button class="page-link" @click="changePage(page)">{{ page }}</button>
-      </li>
+        <li
+          class="page-item"
+          v-for="page in pages"
+          :key="page"
+          :class="{ active: page === currentPage }"
+        >
+          <button class="page-link" @click="changePage(page)">
+            {{ page }}
+          </button>
+        </li>
 
-      <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-        <button class="page-link" @click="changePage(currentPage + 1)">
-          Next
-        </button>
-      </li>
-    </ul>
-  </nav>
+        <li class="page-item" v-if="currentPage !== totalPages">
+          <button class="page-link" @click="changePage(currentPage + 1)">
+            Next
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <script setup>
