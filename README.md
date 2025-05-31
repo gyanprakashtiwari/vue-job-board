@@ -21,12 +21,11 @@ A Vue.js-based job listing platform with search, filtering, and job posting func
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/gyanprakashtiwari/vue-job-board.git
    cd job-board
    ```
-
-````
 
 2. Install dependencies:
 
@@ -115,4 +114,3 @@ src/
 - `build`: Production build
 - `preview`: Locally preview production build
 - `lint`: Run ESLint
-````
