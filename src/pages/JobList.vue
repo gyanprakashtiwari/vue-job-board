@@ -28,6 +28,7 @@
         />
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -104,5 +105,10 @@ const changePage = (page) => {
     border-left: 1px solid #dee2e6; /* Matches Bootstrap's border color */
     padding-left: 1.5rem; /* Equivalent to Bootstrap's ps-4 */
   }
+}
+
+/* Footer space styling */
+.footer-space {
+  margin-bottom: 2rem;
 }
 </style>

@@ -39,6 +39,12 @@
   <div class="container">
     <router-view></router-view>
   </div>
+  <!-- Footer space added here -->
+  <div class="footer-space mt-5 py-4">
+    <div class="text-center text-muted small">
+      <!-- © 2025 Job Board. All rights reserved. -->
+    </div>
+  </div>
 </template>
 
 <script>
